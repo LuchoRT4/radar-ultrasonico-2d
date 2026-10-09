@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Radar Ultrasónico 2D - IUJO</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="main-layout">
+    <!-- Contenedor Principal del Radar -->
+    <div class="card">
+      <h2>Sistema de Radar Ultrasónico 2D</h2>
+      
+      <div class="canvas-container">
+        <canvas id="radarCanvas" width="600" height="350"></canvas>
+      </div>
+
+      <div class="controls">
+        <button id="btnConfigurar">Configurar Datos</button>
+        <button id="btnSimular">Iniciar Simulación</button>
+      </div>
+
+      <div class="info">
+        <p>Ángulo: <span id="valAngulo">0</span>° | Distancia: <span id="valDistancia">0</span> <span class="lblUnidad">cm</span></p>
+      </div>
+    </div>
+
+    <!-- Panel Lateral de Historial -->
+    <div class="card history-card">
+      <h3>Historial de Lecturas</h3>
+      <p class="history-subtitle">Registrado al detener el radar</p>
+      <div class="history-list" id="historialLista">
+        <div class="empty-msg">No hay capturas registradas aún.</div>
+      </div>
+      <button id="btnLimpiarHistorial" class="btn-secondary">Limpiar Historial</button>
+    </div>
+  </div>
+
+  <!-- Modal de Configuración -->
+  <div id="modalConfig" class="modal hidden">
+    <div class="modal-content">
+      <h3>Configuración del Radar</h3>
+
+      <div class="config-group">
+        <label for="selectUnidad">Unidad de Medida de Distancia:</label>
+        <select id="selectUnidad">
+          <option value="cm" selected>Centímetros (cm)</option>
+          <option value="m">Metros (m)</option>
+          <option value="km">Kilómetros (km)</option>
+        </select>
+      </div>
+
+      <div class="modal-actions">
+        <button id="btnGuardarConfig">Guardar Cambios</button>
+        <button id="btnCerrarConfig" class="btn-secondary">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
